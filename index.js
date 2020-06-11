@@ -69,10 +69,22 @@ const reviews = [
 /* Task 4: Console.log just Julius' feedback */
 console.log(reviews[5].feedback);
 
-/* Task 5: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
+/* Task 5: Add a new rating with your (fictitious) opinions of the restaurant in the 
+same format as the reviews above. */
 
+function myOpinion (array, name, rating, feedback){
+  array.push({name, rating, feedback});
+    return array;
+}
+console.log(myOpinion(reviews, 'Anna', 3.5, "nice local restaurant, perfect for lunch"));
 
-/* Task 6: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+/* Task 6: Add the following feedback to Reyna's rating - "this place is chill with really cool people, 
+great for getting work done on weekdays"*/
+function newFeedback (array, index, feedback){
+  array[index].feedback = feedback;
+  return array;
+};
+console.log(newFeedback(reviews, 7, "this place is chill with really cool people, great for getting work done on weekdays"));
 
 /*  Task 7: Write a function to return a review based on the index of the review in the array.
 
@@ -86,10 +98,11 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * For example, if getReviewByIndex is invoked with reviews and the number 0
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
+
 function getReviewByIndex(reviews, index) {
-    /* code here */
+       return `${reviews.name} gave the restaurant a ${reviews.rating} and their feedback was: ${reviews.feedback}`;  
   }
-  
+console.log(getReviewByIndex(reviews[1]));  
 
 /* Task 8: Write a function to get information about the most recent review called `getLastReview`
 
@@ -98,16 +111,18 @@ getLastReview should accept:
   
 and should return a string in the format `name} gave the restaurant a {rating}, and their feedback was: {feedback}`
 
-For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
-*/
-function getLastReview(/* code here */) {
-    /* code here */
-  } 
-
+For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star 
+review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
+for loop*/
+function getLastReview(reviews) {
+  return `${reviews.name} gave the restaurant a ${reviews.rating} and their feedback was: ${reviews.feedback}`;
+  }
+console.log(getLastReview(reviews[reviews.length-1]));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
-/** STRETCH 1: Write a function called `getReviewByRating` that returns an array containing all reviews in a certain range. Your function should accept: 
+/** STRETCH 1: Write a function called `getReviewByRating` that returns an array containing all reviews in a certain range. 
+ * Your function should accept: 
 
   (1) An array of objects
   (2) A rating
