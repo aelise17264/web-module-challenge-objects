@@ -3,9 +3,13 @@
 const latte = {name: "Cafe Latte", 
               price: 4, 
               category: "Drinks"};
-const burger = {name: "Burger", 
+/*const burger = {name: "Burger", 
                 price: 18, 
-                category: "Lunch"};
+                category: "Lunch",
+              teacher: {
+
+              }
+            };*/
 const breakfastBurrito = {name: "Breakfast Burrito", 
                          price: 16, 
                          category:"Breakfast",}
@@ -37,12 +41,22 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
+const burger = {name: "Burger", 
+                price: 18, 
+                category: "Lunch",
+                discount: {
+                  teacher: 13.5,
+                  student: 13.5,
+                public: 16.2,
+            }
+          };
 
-
+console.log(burger.discount.teacher);
 
 ///////////////Reviews (MVP)///////////////////
 
-const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
+const reviews = [
+    {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
     {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
     {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
     {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
@@ -53,7 +67,7 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 ]
 
 /* Task 4: Console.log just Julius' feedback */
-
+console.log(reviews[5].feedback);
 
 /* Task 5: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
